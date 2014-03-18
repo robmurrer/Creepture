@@ -1,0 +1,452 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_std.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_std.h
+freeglut_ext.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_ext.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_callbacks.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_cursor.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+X11/cursorfont.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_display.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_ext.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_ext.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_font.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_font_data.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_gamemode.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_geometry.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_glutfont_definitions.c
+freeglut_std.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_std.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_init.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+limits.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_input_devices.c
+config.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/config.h
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+errno.h
+-
+sys/ioctl.h
+-
+sys/time.h
+-
+time.h
+-
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+termios.h
+-
+fcntl.h
+-
+sys/types.h
+-
+sys/types.h
+-
+winbase.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+config.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/config.h
+Windows.h
+-
+WindowsX.h
+-
+MMSystem.h
+-
+tchar.h
+-
+GL/glx.h
+-
+X11/Xlib.h
+-
+X11/Xatom.h
+-
+X11/keysym.h
+-
+X11/extensions/XInput.h
+-
+X11/extensions/xf86vmode.h
+-
+stdio.h
+-
+string.h
+-
+math.h
+-
+stdlib.h
+-
+sys/types.h
+-
+unistd.h
+-
+sys/time.h
+-
+time.h
+-
+sys/time.h
+-
+time.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_joystick.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+sys/param.h
+-
+InputSprocket.h
+-
+mach/mach.h
+-
+IOKit/IOkitLib.h
+-
+IOKit/hid/IOHIDLib.h
+-
+windows.h
+-
+mmsystem.h
+-
+regstr.h
+-
+sys/ioctl.h
+-
+fcntl.h
+-
+errno.h
+-
+sys/joystick.h
+-
+machine/joystick.h
+-
+linux/joystick.h
+-
+usbhid.h
+-
+usb.h
+-
+libusbhid.h
+-
+usbhid.h
+-
+dev/usb/usb.h
+-
+dev/usb/usbhid.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_main.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+errno.h
+-
+stdarg.h
+-
+gx.h
+-
+limits.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_menu.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_misc.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_overlay.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_spaceball.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+X11/Xlib.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+X11/Xlib.h
+-
+X11/Xutil.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_state.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_std.h
+windows.h
+-
+GL/gl.h
+-
+GL/glu.h
+-
+stdlib.h
+-
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_stroke_mono_roman.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_stroke_roman.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_structure.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_teapot.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+freeglut_teapot_data.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_teapot_data.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_teapot_data.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_videoresize.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_window.c
+freeglut.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut.h
+freeglut_internal.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/freeglut/freeglut_internal.h
+limits.h
+-
+Aygshell.h
+-
+
+/usr/X11/include/GL/gl.h
+gl_mangle.h
+/usr/X11/include/GL/gl_mangle.h
+stdlib.h
+-
+windows.h
+-
+GL/glext.h
+-
+
+/usr/X11/include/GL/gl_mangle.h
+
+/usr/X11/include/GL/glext.h
+windows.h
+-
+stddef.h
+-
+inttypes.h
+-
+inttypes.h
+-
+inttypes.h
+-
+stdint.h
+-
+stdint.h
+-
+inttypes.h
+-
+
+/usr/X11/include/GL/glu.h
+glu_mangle.h
+/usr/X11/include/GL/glu_mangle.h
+GL/gl.h
+-
+
+/usr/X11/include/GL/glu_mangle.h
+
+/usr/X11/include/GL/glx.h
+GL/vms_x_fix.h
+-
+X11/Xlib.h
+-
+X11/Xutil.h
+-
+GL/gl.h
+-
+glx_mangle.h
+/usr/X11/include/GL/glx_mangle.h
+GL/glxext.h
+-
+
+/usr/X11/include/GL/glx_mangle.h
+
+/usr/X11/include/GL/glxext.h
+windows.h
+-
+inttypes.h
+-
+inttypes.h
+-
+inttypes.h
+-
+stdint.h
+-
+stdint.h
+-
+inttypes.h
+-
+
+/usr/X11/include/GL/vms_x_fix.h
+
+/usr/X11/include/X11/X.h
+X11/Xmd.h
+-
+
+/usr/X11/include/X11/Xatom.h
+
+/usr/X11/include/X11/Xfuncproto.h
+
+/usr/X11/include/X11/Xlib.h
+sys/types.h
+-
+stdint.h
+-
+X11/X.h
+-
+X11/Xfuncproto.h
+-
+X11/Xosdefs.h
+-
+stddef.h
+-
+stdlib.h
+-
+
+/usr/X11/include/X11/Xmd.h
+sys/isa_defs.h
+-
+
+/usr/X11/include/X11/Xosdefs.h
+
+/usr/X11/include/X11/Xutil.h
+X11/Xlib.h
+-
+X11/keysym.h
+-
+
+/usr/X11/include/X11/cursorfont.h
+
+/usr/X11/include/X11/extensions/XI.h
+
+/usr/X11/include/X11/extensions/XInput.h
+X11/Xlib.h
+-
+X11/extensions/XI.h
+-
+
+/usr/X11/include/X11/extensions/xf86vm.h
+X11/Xmd.h
+-
+
+/usr/X11/include/X11/extensions/xf86vmode.h
+X11/Xfuncproto.h
+-
+X11/Xmd.h
+-
+X11/extensions/xf86vm.h
+-
+
+/usr/X11/include/X11/keysym.h
+X11/keysymdef.h
+-
+
+/usr/X11/include/X11/keysymdef.h
+
