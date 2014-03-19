@@ -2,6 +2,22 @@
 #include <stdlib.h>
 #include <Box2D/Box2D.h>
 #include "dbh.h"
+#include "cpg.h"
+
+bool test_cpgnode()
+{
+    CPGNode cpg;
+    //cpg.tau2 = 10.0;
+
+    FILE *log = fopen("../log/single-cpg-node.txt", "w");
+    for (int i=0; i<1E3; i++)
+    {
+        fprintf(log, "%d\t%f\n", i+1, cpg.voltage);
+        cpg.tick();
+    }
+
+    return true;
+}
 
 bool test_box2d()
 {
@@ -99,6 +115,7 @@ bool (*tests[])() =
 { 
     test_test,
     test_box2d,
+    test_cpgnode,
     NULL
 };
       
