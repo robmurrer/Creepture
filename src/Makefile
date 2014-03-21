@@ -6,9 +6,13 @@ SRC=$(wildcard *.cpp)
 OBJ=$(SRC:%.cpp=%.o)
 
 default:
-	make runvg
+	make run
 	cd ../log; make
 
+run:
+	rm -f main.o
+	make build
+	./creepture
 runvg:
 	rm -f main.o
 	make build

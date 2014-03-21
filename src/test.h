@@ -4,6 +4,44 @@
 #include "dbh.h"
 #include "cpg.h"
 
+bool test_cpgnet()
+{
+    CPGNet net(3);
+
+    net.weights[0][1] = -1;
+    net.weights[1][0] = -1;
+
+    net.weights[1][2] = -1;
+    net.weights[2][1] = -1;
+
+    net.weights[0][2] = -1;
+    net.weights[2][0] = -1;
+
+    net.nodes[1].u1 = 0.0;
+    net.nodes[1].u2 = 0.0;
+
+    net.nodes[2].v1 = 1.0;
+    
+
+    //net.tick();
+    //printf("network feedback node1: %lf, %lf\n", 
+            //net.nodes[0].network_feedback1, net.nodes[0].network_feedback2);
+    //printf("network feedback node2: %lf, %lf\n", 
+            //net.nodes[1].network_feedback1, net.nodes[1].network_feedback2);
+
+
+    FILE *log = fopen("../log/double-cpg-net.txt", "w");
+    for (int i=0; i<1E3; i++)
+    {
+        fprintf(log, "%d\t%lf\t%lf\t%lf\n", i+1, 
+                net.nodes[0].voltage, net.nodes[1].voltage, net.nodes[2].voltage);
+        net.tick();
+    }
+
+
+    return true;
+}
+
 bool test_cpgnode()
 {
     CPGNode cpg;
@@ -116,6 +154,7 @@ bool (*tests[])() =
     test_test,
     test_box2d,
     test_cpgnode,
+    test_cpgnet,
     NULL
 };
       
