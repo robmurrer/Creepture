@@ -3,6 +3,15 @@
 #include <Box2D/Box2D.h>
 #include "dbh.h"
 #include "cpg.h"
+#include "simulation.h"
+
+bool test_world()
+{
+    Simulation sim(1);
+    sim.tick();
+
+    return true;
+}
 
 bool test_cpgnet()
 {
@@ -33,10 +42,11 @@ bool test_cpgnet()
     FILE *log = fopen("../log/double-cpg-net.txt", "w");
     for (int i=0; i<1E3; i++)
     {
-        fprintf(log, "%d\t%lf\t%lf\t%lf\n", i+1, 
-                net.nodes[0].voltage, net.nodes[1].voltage, net.nodes[2].voltage);
+        //fprintf(log, "%d\t%lf\t%lf\t%lf\n", i+1, 
+                //net.nodes[0].voltage, net.nodes[1].voltage, net.nodes[2].voltage);
         net.tick();
     }
+    fclose(log);
 
 
     return true;
@@ -155,6 +165,7 @@ bool (*tests[])() =
     test_box2d,
     test_cpgnode,
     test_cpgnet,
+    test_world,
     NULL
 };
       
