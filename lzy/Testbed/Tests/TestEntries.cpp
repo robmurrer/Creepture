@@ -76,7 +76,8 @@
 //#include "Web.h"
 //#include "basic.h"
 //#include "single.h"
-#include "single-demo.h"
+//#include "single-demo.h"
+#include "multiple.h"
 
 TestEntry g_testEntries[] =
 {
@@ -129,8 +130,9 @@ TestEntry g_testEntries[] =
 	//{"Slider Crank", SliderCrank::Create},
 	//{"Varying Friction", VaryingFriction::Create},
 	//{"Add Pair Stress Test", AddPair::Create},
-        {"Single-demo", SingleDemo::Create},   
+        //{"Single-demo", SingleDemo::Create},   
         //{"Single", Single::Create},   
+        {"Multiple", Multiple::Create},   
         //{"Basic", Basic::Create},   
         {NULL, NULL}
 };
