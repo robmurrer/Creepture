@@ -295,10 +295,10 @@ GLUT/glut.h
 -
 freeglut/freeglut.h
 /Users/rob/Desktop/evolutionary computation/creepture/lzy/Testbed/Tests/freeglut/freeglut.h
-single.h
-/Users/rob/Desktop/evolutionary computation/creepture/lzy/Testbed/Tests/single.h
+single-demo.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/Testbed/Tests/single-demo.h
 
-/Users/rob/Desktop/evolutionary computation/creepture/lzy/Testbed/Tests/single.h
+/Users/rob/Desktop/evolutionary computation/creepture/lzy/Testbed/Tests/single-demo.h
 
 /usr/X11/include/GL/gl.h
 gl_mangle.h

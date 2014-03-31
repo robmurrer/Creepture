@@ -75,7 +75,8 @@
 //#include "VerticalStack.h"
 //#include "Web.h"
 //#include "basic.h"
-#include "single.h"
+//#include "single.h"
+#include "single-demo.h"
 
 TestEntry g_testEntries[] =
 {
@@ -128,7 +129,8 @@ TestEntry g_testEntries[] =
 	//{"Slider Crank", SliderCrank::Create},
 	//{"Varying Friction", VaryingFriction::Create},
 	//{"Add Pair Stress Test", AddPair::Create},
-        {"Single", Single::Create},   
+        {"Single-demo", SingleDemo::Create},   
+        //{"Single", Single::Create},   
         //{"Basic", Basic::Create},   
-	{NULL, NULL}
+        {NULL, NULL}
 };

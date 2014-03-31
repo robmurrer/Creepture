@@ -183,7 +183,7 @@ Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: ../freeglut/freeglut_std
 Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: ../Testbed/Framework/Render.h
 Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: ../Testbed/Framework/Test.h
 Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: ../Testbed/Tests/TestEntries.cpp
-Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: ../Testbed/Tests/single.h
+Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: ../Testbed/Tests/single-demo.h
 Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: /usr/X11/include/GL/gl.h
 Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: /usr/X11/include/GL/gl_mangle.h
 Testbed/CMakeFiles/Testbed.dir/Tests/TestEntries.cpp.o: /usr/X11/include/GL/glext.h

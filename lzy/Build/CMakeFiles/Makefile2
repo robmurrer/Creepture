@@ -324,9 +324,9 @@ Testbed/preinstall:
 # Target rules for target Testbed/CMakeFiles/Testbed.dir
 
 # All Build rule for target.
-Testbed/CMakeFiles/Testbed.dir/all: glui/CMakeFiles/glui.dir/all
-Testbed/CMakeFiles/Testbed.dir/all: freeglut/CMakeFiles/freeglut_static.dir/all
 Testbed/CMakeFiles/Testbed.dir/all: Box2D/CMakeFiles/Box2D.dir/all
+Testbed/CMakeFiles/Testbed.dir/all: freeglut/CMakeFiles/freeglut_static.dir/all
+Testbed/CMakeFiles/Testbed.dir/all: glui/CMakeFiles/glui.dir/all
 	$(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/depend
 	$(MAKE) -f Testbed/CMakeFiles/Testbed.dir/build.make Testbed/CMakeFiles/Testbed.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/rob/Desktop/evolutionary computation/creepture/lzy/Build/CMakeFiles"  44 45 46 47

@@ -9,7 +9,7 @@ class Single : public Test
     public:
         b2RevoluteJoint* lseg_joint;
         b2RevoluteJoint* rseg_joint;
-        const float motor_speed = 360 * DEGTORAD;
+        const float motor_speed = 370 * DEGTORAD;
 
         Single() 
         { 
