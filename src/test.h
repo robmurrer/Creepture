@@ -57,9 +57,10 @@ bool test_cpgnet()
     CPGNet net(2);
 
     net.weights[0][1] = -1;
-    net.weights[1][0] = -1;
+    net.weights[1][0] = 1;
 
-    net.nodes[1].u1 = 0.1;
+    net.nodes[0].u1 = -1.0;
+    net.nodes[1].u1 = 1.0;
     //net.nodes[1].u2 = 0.0;
     //net.nodes[1].v1 = 1.0;
     //net.nodes[1].v2 = 0.0;

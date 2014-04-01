@@ -10,7 +10,7 @@
 
 // World Settings
 #define GRAVITY             -9.8f
-#define GROUND_FRICTION     10.0f
+#define GROUND_FRICTION     1.0f
 #define GROUND_SIZE         150.0f
 #define STEP_SIZE           1.0f / 60.0f
 #define POS_ITERATIONS      3
@@ -18,7 +18,7 @@
 
 // Creature Settings
 #define MOTOR_SPEED         720
-#define MOTOR_TORQUE        1000.0f
+#define MOTOR_TORQUE        500.0f
 #define SEG_FRICTION        1.0f
 
 class Simulation

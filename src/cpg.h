@@ -6,10 +6,10 @@
 class CPGNode
 {
     public:
-        double tau1 = 0.05;       // u1,u2 time constant larger means longer cycle
+        double tau1 = 0.6;       // u1,u2 time constant larger means longer cycle
         double tau2 = 0.6;    // v1,v2 time ...
-        double beta = 1.0;        // weight between ui, vi. if beta<1 attenuate; beta>1 causes ipatterns 
-        double omega = 1.0;      // weight between flexor, extensor neuron pairs 
+        double beta = 5.5;        // weight between ui, vi. if beta<1 attenuate; beta>1 causes ipatterns 
+        double omega = 2.0;      // weight between flexor, extensor neuron pairs 
         double ue = 1.0;          // external input
         double u1_init = 1.0;     // neuron intial states
         double v1_init = 0.0;     // ...
