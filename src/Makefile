@@ -6,9 +6,11 @@ SRC=$(wildcard *.cpp)
 OBJ=$(SRC:%.cpp=%.o)
 
 default:
-	#make runvg
+	make runvg
 	#make run
-	make log
+	#make log
+
+runtb:
 	cd ../lzy/Testbed/; make
 
 log:

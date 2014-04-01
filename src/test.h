@@ -4,6 +4,22 @@
 #include "dbh.h"
 #include "cpg.h"
 #include "simulation.h"
+#include "chromosome.h"
+
+
+bool test_chromosome()
+{
+    Chromosome chrom(2);
+
+    check_debug(chrom.genes[0].u1_init == 0, "init failed should be 0");
+    check_debug(chrom.genes[1].v2_init == 0, "init failed should be 0");
+    check_debug(chrom.genes[1].adjacency[1] == 0, "init failed should be 0");
+
+    return true;
+
+error:
+    return false;
+}
 
 bool test_cpg_sim()
 {
@@ -194,6 +210,7 @@ bool (*tests[])() =
     test_cpgnet,
     test_world,
     test_cpg_sim,
+    test_chromosome,
     NULL
 };
       
