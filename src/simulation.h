@@ -9,17 +9,17 @@
 #define RADTODEG 57.295779513082320876f
 
 // World Settings
-#define GRAVITY -9.8f
-#define GROUND_FRICTION 1.0f
-#define GROUND_SIZE 150.0f
-#define STEP_SIZE 1.0f / 60.0f
-#define POS_ITERATIONS 8
-#define VEL_ITERATIONS 3
+#define GRAVITY             -9.8f
+#define GROUND_FRICTION     10.0f
+#define GROUND_SIZE         150.0f
+#define STEP_SIZE           1.0f / 60.0f
+#define POS_ITERATIONS      3
+#define VEL_ITERATIONS      8
 
 // Creature Settings
-#define MOTOR_SPEED 720
-#define MOTOR_TORQUE = 500.0f
-#define SEG_FRICTION = 1.0f
+#define MOTOR_SPEED         720
+#define MOTOR_TORQUE        1000.0f
+#define SEG_FRICTION        1.0f
 
 class Simulation
 {
@@ -89,7 +89,6 @@ class Simulation
 
         const float beam_joint_offset = 0.25;
         const float seg_joint_offset = seg_rad/2.0;
-        const float motor_torque = 500.0;
 
         b2RevoluteJointDef  revoluteJointDef;
 	b2WeldJointDef jd;
@@ -149,7 +148,7 @@ class Simulation
             revoluteJointDef.lowerAngle = -90 * DEGTORAD;
             revoluteJointDef.upperAngle = 90 * DEGTORAD;
             revoluteJointDef.motorSpeed = 0;
-            revoluteJointDef.maxMotorTorque = motor_torque;
+            revoluteJointDef.maxMotorTorque = MOTOR_TORQUE;
             revoluteJointDef.enableMotor = true;
             joints[i+1] = (b2RevoluteJoint*) world->CreateJoint(&revoluteJointDef);
 
