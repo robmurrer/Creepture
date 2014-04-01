@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <Box2D/Box2D.h>
 #include "dbh.h"
 #include "cpg.h"
@@ -14,7 +15,11 @@ bool test_chromosome()
     check_debug(chrom.genes[0].u1_init == 0, "init failed should be 0");
     check_debug(chrom.genes[1].v2_init == 0, "init failed should be 0");
     check_debug(chrom.genes[1].adjacency[1] == 0, "init failed should be 0");
-
+    
+    srand(time(0));
+    chrom.print(stdout);
+    chrom.init_rand();
+    chrom.print(stdout);
     return true;
 
 error:
@@ -204,12 +209,12 @@ error:
 
 bool (*tests[])() = 
 { 
-    test_test,
-    test_box2d,
-    test_cpgnode,
-    test_cpgnet,
-    test_world,
-    test_cpg_sim,
+    //test_test,
+    //test_box2d,
+    //test_cpgnode,
+    //test_cpgnet,
+    //test_world,
+    //test_cpg_sim,
     test_chromosome,
     NULL
 };
