@@ -6,7 +6,8 @@ SRC=$(wildcard *.cpp)
 OBJ=$(SRC:%.cpp=%.o)
 
 default:
-	make runvg
+	#make runvg
+	make run
 
 log:
 	make run

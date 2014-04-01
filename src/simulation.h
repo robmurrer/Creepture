@@ -13,8 +13,8 @@
 #define GROUND_FRICTION 1.0f
 #define GROUND_SIZE 150.0f
 #define STEP_SIZE 1.0f / 60.0f
-#define POS_ITERATIONS 6
-#define VEL_ITERATIONS 2
+#define POS_ITERATIONS 8
+#define VEL_ITERATIONS 3
 
 // Creature Settings
 #define MOTOR_SPEED 720
@@ -25,6 +25,7 @@ class Simulation
 {
     public:
     b2World *world;
+    bool testbed;
     std::vector<b2RevoluteJoint*> joints;
     b2Body *head;
     b2Body *tail;
@@ -33,14 +34,26 @@ class Simulation
     {
         joints = std::vector<b2RevoluteJoint*>(2*segment_count);
         world = new b2World(b2Vec2(0.0f, GRAVITY));
+        testbed = false;
         floor_init();
         creature_init();
 
     };
 
+    // testbed constructor
+    Simulation(int segment_count, b2World *w)
+    {
+        testbed = true;
+        joints = std::vector<b2RevoluteJoint*>(2*segment_count);
+        world = w;
+        floor_init();
+        creature_init();
+    };
+
     ~Simulation()
     {
-        delete world;
+        // only delete world if in testbed env
+        if (testbed != true) delete world;
     };
 
     void floor_init()
@@ -60,6 +73,7 @@ class Simulation
     void creature_init()
     {
         b2BodyDef myBodyDef;
+        myBodyDef.allowSleep = true;
         b2FixtureDef myFixtureDef;
 
         const int beam_y_pos = 2;

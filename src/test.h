@@ -7,15 +7,21 @@
 
 bool test_world()
 {
-    int segments = 2;
+    int segments = 5;
     Simulation sim(segments);
     printf("Head: %f, Tail: %f\n",
             sim.head->GetPosition().x, sim.tail->GetPosition().x);
 
-    for (int i=0; i<1E1; i++) sim.tick();
+    int i;
+    for (i=0; i<1E5; i++) 
+    {
+        if (!sim.tail->IsAwake()) break;
+        sim.tick();
+    }
 
-    printf("Head: %f, Tail: %f\n",
-            sim.head->GetPosition().x, sim.tail->GetPosition().x);
+
+    printf("Head: %f, Tail: %f i:%d \n",
+            sim.head->GetPosition().x, sim.tail->GetPosition().x, i);
 
     return true;
 }
