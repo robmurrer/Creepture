@@ -5,6 +5,32 @@
 #include "cpg.h"
 #include "simulation.h"
 
+bool test_cpg_sim()
+{
+    Simulation sim(1);
+    FILE *log = fopen("../log/double-cpg-net.txt", "r");
+    int step;
+    double cpg1, cpg2;
+
+    printf("Start Head: %f, Tail: %f\n",
+            sim.head->GetPosition().x, sim.tail->GetPosition().x);
+
+    while(fscanf(log, "%d%lf%lf", &step, &cpg1, &cpg2) != EOF)
+    {
+        //printf("%d %lf %lf\n", step, cpg1, cpg2);
+        sim.joints[0]->SetMotorSpeed(cpg1*MOTOR_SPEED);
+        sim.joints[1]->SetMotorSpeed(cpg2*MOTOR_SPEED);
+        sim.tick();
+    }
+    fclose(log);
+
+
+    printf("End Head: %f, Tail: %f\n",
+            sim.head->GetPosition().x, sim.tail->GetPosition().x);
+
+    return true;
+}
+
 bool test_world()
 {
     int segments = 5;
@@ -28,35 +54,22 @@ bool test_world()
 
 bool test_cpgnet()
 {
-    CPGNet net(3);
+    CPGNet net(2);
 
     net.weights[0][1] = -1;
     net.weights[1][0] = -1;
 
-    net.weights[1][2] = -1;
-    net.weights[2][1] = -1;
-
-    net.weights[0][2] = -1;
-    net.weights[2][0] = -1;
-
-    net.nodes[1].u1 = 0.0;
-    net.nodes[1].u2 = 0.0;
-
-    net.nodes[2].v1 = 1.0;
-    
-
-    //net.tick();
-    //printf("network feedback node1: %lf, %lf\n", 
-            //net.nodes[0].network_feedback1, net.nodes[0].network_feedback2);
-    //printf("network feedback node2: %lf, %lf\n", 
-            //net.nodes[1].network_feedback1, net.nodes[1].network_feedback2);
+    net.nodes[1].u1 = 0.1;
+    //net.nodes[1].u2 = 0.0;
+    //net.nodes[1].v1 = 1.0;
+    //net.nodes[1].v2 = 0.0;
 
 
     FILE *log = fopen("../log/double-cpg-net.txt", "w");
     for (int i=0; i<1E3; i++)
     {
-        //fprintf(log, "%d\t%lf\t%lf\t%lf\n", i+1, 
-                //net.nodes[0].voltage, net.nodes[1].voltage, net.nodes[2].voltage);
+        fprintf(log, "%d\t%lf\t%lf\n", i+1, 
+                net.nodes[0].voltage, net.nodes[1].voltage);
         net.tick();
     }
     fclose(log);
@@ -179,6 +192,7 @@ bool (*tests[])() =
     test_cpgnode,
     test_cpgnet,
     test_world,
+    test_cpg_sim,
     NULL
 };
       

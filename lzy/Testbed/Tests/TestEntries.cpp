@@ -30,6 +30,7 @@
 //#include "single-demo.h"
 //#include "multiple.h"
 #include "plugged.h"
+#include "cpgtest.h"
 
 TestEntry g_testEntries[] =
 {
@@ -37,6 +38,7 @@ TestEntry g_testEntries[] =
         //{"Single", Single::Create},   
         //{"Multiple", Multiple::Create},   
         //{"Basic", Basic::Create},   
-        {"Plugged", Plugged::Create},   
+        //{"Plugged", Plugged::Create},   
+        {"CPGTest", CPGTest::Create},   
         {NULL, NULL}
 };

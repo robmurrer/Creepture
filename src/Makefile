@@ -7,9 +7,12 @@ OBJ=$(SRC:%.cpp=%.o)
 
 default:
 	#make runvg
-	make run
+	#make run
+	make log
+	cd ../lzy/Testbed/; make
 
 log:
+	#make runvg
 	make run
 	cd ../log; make
 
