@@ -6,6 +6,42 @@
 #include "cpg.h"
 #include "simulation.h"
 #include "chromosome.h"
+#include "ga-util.h"
+
+
+bool test_probrand()
+{
+    srand(time(0));
+
+    int num_runs = 1E4;
+    int num_true = 0;
+    double prob = 0.19;
+
+    for (int i=0; i<num_runs; i++)
+    {
+        if (prob_to_rand(prob)) num_true++;
+    }
+
+    double error_allowed = .03;
+
+    //printf("%d/%d, %lf ~ %lf, error: %lf \n", 
+            //num_true, num_runs,
+            //num_true/(double)num_runs, prob, fabs(num_true/(double)num_runs - prob));
+    check_debug(fabs(num_true/(double)num_runs - prob) < error_allowed, 
+            "Max error in prob reached try increasing num_runs");
+
+
+    check_debug(prob_to_rand(100.0) == true, "100.0 prob should return true");
+    check_debug(prob_to_rand(1000.0) == true, "1000.0 prob should return true");
+    check_debug(prob_to_rand(0.0) == false, "0.0 prob should return false");
+    check_debug(prob_to_rand(-1000.0) == false, "-1000.0 prob should return false");
+
+
+    return true;
+
+error:
+    return false;
+}
 
 
 bool test_chromosome()
@@ -216,6 +252,7 @@ bool (*tests[])() =
     //test_world,
     //test_cpg_sim,
     test_chromosome,
+    test_probrand,
     NULL
 };
       

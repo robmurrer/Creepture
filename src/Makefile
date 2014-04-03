@@ -6,10 +6,14 @@ SRC=$(wildcard *.cpp)
 OBJ=$(SRC:%.cpp=%.o)
 
 default:
-	make runvg
-	#make run
+	#make runvg
+	make run
+	#make lldb
 	#make log
 
+lldb:
+	make build
+	lldb ./creepture
 runtb:
 	cd ../lzy/Testbed/; make
 
