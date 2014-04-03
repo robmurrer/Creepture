@@ -79,7 +79,7 @@ class Chromosome
 
             for (int i=0; i<genes.size(); i++)
             {
-                fprintf(out,"%lf %lf %lf %lf\n", 
+                fprintf(out,"%3.6lf %3.6lf %3.6lf %3.6lf\n", 
                         genes[i].u1_init, genes[i].u2_init, 
                         genes[i].v1_init, genes[i].v2_init);
             }

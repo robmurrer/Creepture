@@ -10,7 +10,7 @@
 
 bool test_chromosome()
 {
-    Chromosome chrom(2);
+    Chromosome chrom(10);
 
     check_debug(chrom.genes[0].u1_init == 0, "init failed should be 0");
     check_debug(chrom.genes[1].v2_init == 0, "init failed should be 0");
