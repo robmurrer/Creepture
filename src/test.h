@@ -9,6 +9,29 @@
 #include "ga-util.h"
 
 
+bool test_chromo_write_to_disk()
+{
+    srand(time(0));
+
+    char filename[] = "../log/chromosomes/test.txt";
+    FILE *file = fopen(filename, "w");
+
+    Chromosome chromo1(14);
+    chromo1.init_rand();
+    chromo1.print(file);
+    fclose(file);
+
+    Chromosome chromo2(filename);
+    chromo2.calcFitness();
+    chromo1.calcFitness();
+    
+    check_debug(chromo1.fitness == chromo2.fitness, "Fitness should be same");
+
+    return true;
+error:
+    return false;
+}
+
 bool test_fitness()
 {
     srand(time(0));
@@ -269,7 +292,8 @@ bool (*tests[])() =
     //test_cpg_sim,
     //test_chromosome,
     //test_probrand,
-    test_fitness,
+    //test_fitness,
+    test_chromo_write_to_disk,
     NULL
 };
       

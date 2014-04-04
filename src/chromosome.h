@@ -57,6 +57,42 @@ class Chromosome
             }
         };
 
+        Chromosome(char *filename)
+        {
+            FILE *file = fopen(filename, "r");
+            int size;
+
+            // size of chromosome
+            fscanf(file, "%d", &size);
+
+            // cread adj matrix
+            for (int i=0; i<size; i++)
+            {
+                genes.push_back(Gene(size));
+            }
+
+            // read in adjacency matrix
+            for (int i=0; i<size; i++)
+            {
+                for(int j=0; j<size; j++)
+                {
+                    int tmp;
+                    fscanf(file, "%d ", &tmp);
+                    genes[i].adjacency[j] = tmp;
+                }
+            }
+
+            for (int i=0; i<size; i++)
+            {
+                fscanf(file,"%lf %lf %lf %lf\n", 
+                        &genes[i].u1_init, &genes[i].u2_init, 
+                        &genes[i].v1_init, &genes[i].v2_init);
+            }
+
+            fclose(file);
+        };
+
+
         void init_rand()
         {
             for (int i=0; i<genes.size(); i++)
@@ -72,18 +108,20 @@ class Chromosome
 
         void print(FILE * out)
         {
+            fprintf(out, "%d\n", (int)genes.size());
+
             for (int i=0; i<genes.size(); i++)
             {
                 for(int j=0; j<genes.size(); j++)
                 {
-                    fprintf(out, "%2d ", genes[i].adjacency[j]);
+                    fprintf(out, "%d ", genes[i].adjacency[j]);
                 }
                 fprintf(out,"\n");
             }
 
             for (int i=0; i<genes.size(); i++)
             {
-                fprintf(out,"%3.6lf %3.6lf %3.6lf %3.6lf\n", 
+                fprintf(out,"%lf %lf %lf %lf\n", 
                         genes[i].u1_init, genes[i].u2_init, 
                         genes[i].v1_init, genes[i].v2_init);
             }
