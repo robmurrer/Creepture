@@ -49,7 +49,7 @@ class Chromosome
 {
     public:
         std::vector<Gene> genes;
-        double fitness;
+        double fitness = 0.0;
 
         Chromosome(int size)
         {
@@ -154,9 +154,10 @@ class Chromosome
             CPGNet *net = toCPGNet();
 
             Simulation sim(genes.size()/2);
+
             sim.tick();
 
-            double initial_pos = sim.head->GetPosition().x;
+            double initial_pos = sim.tail->GetPosition().x;
 
             for (int i=0; i<MAX_TICK; i++)
             {
@@ -175,7 +176,7 @@ class Chromosome
             }
 
 
-            fitness = sim.head->GetPosition().x - initial_pos;
+            fitness = sim.tail->GetPosition().x - initial_pos;
 
             delete net;
 

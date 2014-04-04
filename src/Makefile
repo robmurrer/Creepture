@@ -42,7 +42,7 @@ log:
 run:
 	rm -f main.o
 	make build
-	./creepture
+	time ./creepture
 runvg:
 	rm -f main.o
 	make build

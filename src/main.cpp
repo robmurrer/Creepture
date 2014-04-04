@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include "test.h"
 
-#define VERSION             2
-#define CHROMO_SIZE         4
-#define POP_SIZE            10
-#define MAX_GEN             100
+#define VERSION             3
+#define CHROMO_SIZE         6 
+#define POP_SIZE            100
+#define MAX_GEN             150 
 #define ELITES              0.2
 #define XOVER_RATE          0.7
 #define MUT_RATE            0.2
 #define MUT_RANGE           0.30
-#define SEED                0
-//#define SEED                time(0) 
+//#define SEED                0
+#define SEED                time(0) 
 
 int main()
 {
     //run_tests();
+    
     srand(SEED);
     Population pop(POP_SIZE, CHROMO_SIZE);
 
@@ -71,7 +72,6 @@ int main()
     FILE *out = fopen("../log/gatmp/chromosome.txt", "w");
     pop.list[0].print(out);
     fclose(out);
-
 
 
     return 0;

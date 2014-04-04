@@ -96,7 +96,7 @@ class Simulation
 
         int beam_x_pos = 0;
 
-        for (int i=0; i<joints.size()-1; i++)
+        for (int i=0; i<joints.size(); i = i+2)
         {
             // center beam
             myBodyDef.type = b2_dynamicBody;
