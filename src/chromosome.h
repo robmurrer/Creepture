@@ -128,20 +128,28 @@ class Chromosome
 
         };
 
-        void calcFitness()
+        CPGNet* toCPGNet()
         {
-            // convert chromosome to CPG network
-            CPGNet net(genes.size());
+            CPGNet *net = new CPGNet(genes.size());
+
             for (int i=0; i<genes.size(); i++)
             {
                 for (int j=0; j<genes.size(); j++)
-                    net.weights[i][j] = genes[i].adjacency[j];
+                    net->weights[i][j] = genes[i].adjacency[j];
                  
-                net.nodes[i].u1 = genes[i].u1_init;
-                net.nodes[i].u2 = genes[i].u2_init;
-                net.nodes[i].v1 = genes[i].v1_init;
-                net.nodes[i].v2 = genes[i].v2_init;
+                net->nodes[i].u1 = genes[i].u1_init;
+                net->nodes[i].u2 = genes[i].u2_init;
+                net->nodes[i].v1 = genes[i].v1_init;
+                net->nodes[i].v2 = genes[i].v2_init;
             }
+
+            return net;
+        };
+
+        void calcFitness()
+        {
+            // convert chromosome to CPG network
+            CPGNet *net = toCPGNet();
 
             Simulation sim(genes.size()/2);
             sim.tick();
@@ -151,12 +159,12 @@ class Chromosome
             for (int i=0; i<MAX_TICK; i++)
             {
                 // advance CPG network
-                net.tick();
+                net->tick();
 
                 // update sim joint speeds
                 for (int j=0; j<genes.size(); j++)
                 {
-                    double cpg = net.nodes[j].voltage;
+                    double cpg = net->nodes[j].voltage;
                     sim.joints[j]->SetMotorSpeed(cpg*MOTOR_SPEED);
                 }
 
@@ -166,6 +174,8 @@ class Chromosome
 
 
             fitness = sim.head->GetPosition().x - initial_pos;
+
+            delete net;
 
 
         };
