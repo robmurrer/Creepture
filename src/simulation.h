@@ -46,6 +46,7 @@ class Simulation
         testbed = true;
         joints = std::vector<b2RevoluteJoint*>(2*segment_count);
         world = w;
+        w->SetGravity(b2Vec2(0.0f, GRAVITY));
         floor_init();
         creature_init();
     };
