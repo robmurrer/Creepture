@@ -19,12 +19,13 @@ genplots:
 	set title \"`cat ../log/gatmp/title.txt`\"; \
 	plot \"../log/gatmp/generations.txt\" using 2 title 'Best Fitness' with lines, \
 	\"../log/gatmp/generations.txt\" using 3 title 'Avg Fitness' with lines"
-	open ../log/gatmp/fitness.png
+	#open ../log/gatmp/fitness.png
 	
 
 logcopy:
 	mkdir  ../log/garuns/`cat ../log/gatmp/title.txt`
 	cp ../log/gatmp/* ../log/garuns/`cat ../log/gatmp/title.txt`/
+	cp ../log/gatmp/chromosome.txt ../log/chromosomes/test.txt 
 
 
 lldb:

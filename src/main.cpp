@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "test.h"
 
-#define VERSION             1
-#define CHROMO_SIZE         2
+#define VERSION             2
+#define CHROMO_SIZE         4
 #define POP_SIZE            10
 #define MAX_GEN             100
 #define ELITES              0.2
-#define XOVER_RATE          0.5
-#define MUT_RATE            0.05
-#define MUT_RANGE           0.10
-//#define SEED                0
-#define SEED                time(0) 
+#define XOVER_RATE          0.7
+#define MUT_RATE            0.2
+#define MUT_RANGE           0.30
+#define SEED                0
+//#define SEED                time(0) 
 
 int main()
 {
@@ -62,9 +62,10 @@ int main()
     pop.print(stdout);
 
     FILE *title = fopen("../log/gatmp/title.txt", "w");
-    fprintf(title, "V%d-%d_Chromo-%d_Pop-%d_Elite-%.3lf_Mutrate-%.3lf_Mutrange-%.3lf_XRate-%d_Seed-%.3lf_Distance",
+    fprintf(title, "V%d-%d_Chromo-%d_Pop-%d_Elite-%.3lf_Mutrate-%.3lf_Mutrange-%.3lf_XRate-%d_Seed-%.3lf_Distance-%d_MGen",
             VERSION, CHROMO_SIZE, POP_SIZE, num_elites, 
-            MUT_RATE, MUT_RANGE, XOVER_RATE, (int)SEED, pop.list[0].fitness);
+            MUT_RATE, MUT_RANGE, XOVER_RATE, (int)SEED, 
+            pop.list[0].fitness, MAX_GEN);
     fclose(title);
 
     FILE *out = fopen("../log/gatmp/chromosome.txt", "w");
