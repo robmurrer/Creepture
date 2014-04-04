@@ -16,7 +16,7 @@ bool test_chromo_write_to_disk()
     char filename[] = "../log/chromosomes/test.txt";
     FILE *file = fopen(filename, "w");
 
-    Chromosome chromo1(14);
+    Chromosome chromo1(2);
     chromo1.init_rand();
     chromo1.print(file);
     fclose(file);

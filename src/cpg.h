@@ -78,11 +78,11 @@ class CPGNet
 {
     public:
         std::vector<CPGNode> nodes;
-        std::vector<std::vector<int>> weights;
+        std::vector<std::vector<int> > weights;
         CPGNet(int size)
         {
             nodes = std::vector<CPGNode>(size);
-            weights = std::vector<std::vector<int>>(size);
+            weights = std::vector<std::vector<int> >(size);
 
             // set up adjacency matrix
             for (int i=0; i<size; i++)

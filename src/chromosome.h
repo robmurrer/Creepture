@@ -2,6 +2,7 @@
 #define _CHROMOSOME_H_
 #include <vector>
 #include "simulation.h"
+#include "cpg.h"
 
 #define MAX_TICK    1E3
 

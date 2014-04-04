@@ -1,49 +1,47 @@
-#ifndef CPGTest_H
-#define CPGTest_H
+#ifndef CHROMOFROMFILE_H
+#define CHROMOFROMFILE_H
 
-#include "simulation.h"
+#include "../../../src/simulation.h"
+#include "../../../src/chromosome.h"
+#include "../../../src/cpg.h"
 
-#define DEGTORAD 0.0174532925199432957f
-#define RADTODEG 57.295779513082320876f
 
-class CPGTest : public Test
+class ChromoFromFile : public Test
 {
     public:
         Simulation *sim;
-        FILE *log;
+        CPGNet *net;
+        int size;
 
-        CPGTest() 
+        ChromoFromFile() 
         { 
-            sim = new Simulation(1, m_world);
+            char filename[] = "../../../log/chromosomes/test.txt";
+            FILE *file = fopen(filename, "r");
+            fscanf(file, "%d", &size);
+            fclose(file);
 
-            log = fopen("../../../log/double-cpg-net.txt", "r");
+            sim = new Simulation(size/2, m_world);
+            Chromosome chromo(filename);
+            net = chromo.toCPGNet();
 
-            //todo figure out a way not to have these hardcoded
-            //the following doesn't work because settings is available to be
-            //modified or I can't find where it is
-            //settings->velocityIterations = VEL_ITERATIONS;
-            //settings->positionIterations = POS_ITERATIONS;
         
         } //do nothing, no scene yet
 
         void Step(Settings* settings)
         {
-            int step;
-            double cpg1;
-            double cpg2;
-
-            if (fscanf(log, "%d%lf%lf", &step, &cpg1, &cpg2) != EOF)
-            {
-                sim->joints[0]->SetMotorSpeed(cpg1*MOTOR_SPEED);
-                sim->joints[1]->SetMotorSpeed(cpg2*MOTOR_SPEED);
-            }
             
-
             //run the default physics and rendering
             Test::Step(settings); 
 
-            //make tick be a simple update or cpg?
-            //sim->tick();
+            net->tick();
+
+            // update sim joint speeds
+            for (int j=0; j<size; j++)
+            {
+                double cpg = net->nodes[j].voltage;
+                sim->joints[j]->SetMotorSpeed(cpg*MOTOR_SPEED);
+            }
+
 
             m_debugDraw.DrawString(5, m_textLine, "head: %f, tail: %f", 
                     sim->head->GetPosition().x, sim->tail->GetPosition().x);
@@ -76,7 +74,7 @@ class CPGTest : public Test
 
         static Test* Create()
         {
-            return new CPGTest;
+            return new ChromoFromFile;
         }
 };
 

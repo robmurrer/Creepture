@@ -28,17 +28,19 @@
 //#include "basic.h"
 //#include "single.h"
 //#include "single-demo.h"
-#include "multiple.h"
-#include "plugged.h"
-#include "cpgtest.h"
+//#include "multiple.h"
+//#include "plugged.h"
+//#include "cpgtest.h"
+#include "chromofromfile.h"
 
 TestEntry g_testEntries[] =
 {
         //{"Single-demo", SingleDemo::Create},   
         //{"Single", Single::Create},   
-        {"Multiple", Multiple::Create},   
+        //{"Multiple", Multiple::Create},   
         //{"Basic", Basic::Create},   
         //{"Plugged", Plugged::Create},   
-        {"CPGTest", CPGTest::Create},   
+        //{"CPGTest", CPGTest::Create},   
+        {"ChromoFromFile", ChromoFromFile::Create},   
         {NULL, NULL}
 };
