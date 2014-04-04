@@ -8,6 +8,28 @@
 #include "chromosome.h"
 #include "ga-util.h"
 
+bool test_mutate_range()
+{
+    srand(time(0));
+    double initial = 2.0;
+    double min = -10.0;
+    double max = 10.0;
+    double percent = 0.01;
+    double next = initial;
+
+    for (int i=0; i<1E2; i++)
+    {
+        next = mutate_range(next, min, max, percent);
+        //printf("%lf\n", next);
+        check_debug(next < max || next > min, "When out of range");
+    }
+
+    return true;
+
+error:
+    return false;
+}
+
 
 bool test_chromo_write_to_disk()
 {
@@ -293,7 +315,8 @@ bool (*tests[])() =
     //test_chromosome,
     //test_probrand,
     //test_fitness,
-    test_chromo_write_to_disk,
+    //test_chromo_write_to_disk,
+    test_mutate_range,
     NULL
 };
       

@@ -26,4 +26,18 @@ bool prob_to_rand(double p)
     return favor;
 }
 
+
+double mutate_range(double initial, double min, double max, double percent)
+{
+    if (initial == 0.0) initial =  0.01;
+
+    int sign = (rand()%2 ? -1 : 1);
+    double next = initial + initial*percent*sign;
+
+    if (next > max) next = max;
+    if (next < min) next = min;
+
+    return next;
+}
+
 #endif
