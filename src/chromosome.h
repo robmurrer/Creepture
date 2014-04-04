@@ -3,9 +3,31 @@
 #include <vector>
 #include "simulation.h"
 #include "cpg.h"
+#include "ga-util.h"
 
 #define MAX_TICK    1E3
 
+int rand_adj()
+{
+    int r = rand()%3;
+
+    if (r == 0) return -1;
+    if (r == 1) return  0;
+    if (r == 2) return  1;
+
+    return 0;
+}
+
+double rand_neuron()
+{
+    int size = 1E3;
+    double r = rand()%size;
+    int sign = rand()%2;
+
+    return (sign ? -1 : 1) * (r/size);
+
+}
+    
 class Gene
 {
     public:
@@ -22,27 +44,6 @@ class Gene
 
 };
        
-int rand_adj()
-{
-    int r = rand()%3;
-
-    if (r == 0) return -1;
-    if (r == 1) return  0;
-    if (r == 2) return  1;
-
-    return 0;
-}
-
-double rand_neuron()
-{
-    int size = 1E6;
-    double r = rand()%size;
-    int sign = rand()%2;
-
-    return (sign ? -1 : 1) * (r/size);
-
-}
-    
 
 class Chromosome
 {
@@ -182,6 +183,53 @@ class Chromosome
         };
 
 
+        bool operator<(const Chromosome& rhs) const
+        {
+            if ((fitness - rhs.fitness) <= 0) return false;
+            else return true;
+        };
+
+
+        void mutate(double prob, double percent)
+        {
+
+            for (int i=0; i<genes.size(); i++)
+            {
+                // mutate adjacency
+               for (int j=0; j<genes.size(); j++)
+               {
+                   if (prob_to_rand(prob))
+                   {
+                       genes[i].adjacency[j] = rand_adj();
+                   }
+               }
+
+               // mutate neurons
+               if (prob_to_rand(prob))
+                {
+                    genes[i].u1_init = mutate_range(
+                            genes[i].u1_init, -1.0, 1.0, percent);
+                }
+
+               if (prob_to_rand(prob))
+                {
+                    genes[i].u2_init = mutate_range(
+                            genes[i].u2_init, -1.0, 1.0, percent);
+                }
+
+               if (prob_to_rand(prob))
+                {
+                    genes[i].v1_init = mutate_range(
+                            genes[i].v1_init, -1.0, 1.0, percent);
+                }
+
+               if (prob_to_rand(prob))
+                {
+                    genes[i].v2_init = mutate_range(
+                            genes[i].v2_init, -1.0, 1.0, percent);
+                }
+            }
+        };
 
 };
 

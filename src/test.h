@@ -7,6 +7,32 @@
 #include "simulation.h"
 #include "chromosome.h"
 #include "ga-util.h"
+#include "population.h"
+
+
+bool test_mutation()
+{
+    Chromosome chromo(2);
+    chromo.init_rand();
+    //chromo.print(stdout);
+    chromo.mutate(0.0, 0.25);
+    //chromo.print(stdout);
+
+    return true;
+};
+
+bool test_population_creation()
+{
+    Population pop(10, 2);
+
+    //check_debug(pop.list.size() == 100, "Members weren't created");
+    
+    pop.calcFitness();
+    pop.sort();
+    //pop.print(stdout);
+
+    return true;
+}
 
 bool test_mutate_range()
 {
@@ -317,6 +343,8 @@ bool (*tests[])() =
     //test_fitness,
     //test_chromo_write_to_disk,
     test_mutate_range,
+    test_population_creation,
+    test_mutation,
     NULL
 };
       
