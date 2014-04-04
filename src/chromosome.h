@@ -1,6 +1,9 @@
 #ifndef _CHROMOSOME_H_
 #define _CHROMOSOME_H_
 #include <vector>
+#include "simulation.h"
+
+#define MAX_TICK    1E3
 
 class Gene
 {
@@ -44,6 +47,7 @@ class Chromosome
 {
     public:
         std::vector<Gene> genes;
+        double fitness;
 
         Chromosome(int size)
         {
@@ -85,6 +89,49 @@ class Chromosome
             }
 
         };
+
+        void calcFitness()
+        {
+            // convert chromosome to CPG network
+            CPGNet net(genes.size());
+            for (int i=0; i<genes.size(); i++)
+            {
+                for (int j=0; j<genes.size(); j++)
+                    net.weights[i][j] = genes[i].adjacency[j];
+                 
+                net.nodes[i].u1 = genes[i].u1_init;
+                net.nodes[i].u2 = genes[i].u2_init;
+                net.nodes[i].v1 = genes[i].v1_init;
+                net.nodes[i].v2 = genes[i].v2_init;
+            }
+
+            Simulation sim(genes.size()/2);
+            sim.tick();
+
+            double initial_pos = sim.head->GetPosition().x;
+
+            for (int i=0; i<MAX_TICK; i++)
+            {
+                // advance CPG network
+                net.tick();
+
+                // update sim joint speeds
+                for (int j=0; j<genes.size(); j++)
+                {
+                    double cpg = net.nodes[j].voltage;
+                    sim.joints[j]->SetMotorSpeed(cpg*MOTOR_SPEED);
+                }
+
+                // advance sim
+                sim.tick();
+            }
+
+
+            fitness = sim.head->GetPosition().x - initial_pos;
+
+
+        };
+
 
 
 };

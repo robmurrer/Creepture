@@ -9,6 +9,21 @@
 #include "ga-util.h"
 
 
+bool test_fitness()
+{
+    srand(time(0));
+    Chromosome single(2);
+    single.init_rand();
+    single.calcFitness();
+
+    printf("Fitness: %lf\n", single.fitness);
+
+
+
+    return true;
+}
+
+
 bool test_probrand()
 {
     srand(time(0));
@@ -27,6 +42,7 @@ bool test_probrand()
     //printf("%d/%d, %lf ~ %lf, error: %lf \n", 
             //num_true, num_runs,
             //num_true/(double)num_runs, prob, fabs(num_true/(double)num_runs - prob));
+    
     check_debug(fabs(num_true/(double)num_runs - prob) < error_allowed, 
             "Max error in prob reached try increasing num_runs");
 
@@ -251,8 +267,9 @@ bool (*tests[])() =
     //test_cpgnet,
     //test_world,
     //test_cpg_sim,
-    test_chromosome,
-    test_probrand,
+    //test_chromosome,
+    //test_probrand,
+    test_fitness,
     NULL
 };
       
