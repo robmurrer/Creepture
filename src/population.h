@@ -9,6 +9,7 @@ class Population
 
     public:
         std::vector<Chromosome> list;
+        double avgFitness = 0.0;
 
         Population(int size_population, int size_chromosome)
         {
@@ -29,10 +30,14 @@ class Population
 
         void calcFitness()
         {
+            avgFitness = 0.0;
             for (int i=0; i<list.size(); i++)
             {
                 list[i].calcFitness();
+                avgFitness += list[i].fitness;
             }
+
+            avgFitness /= list.size();
         };
 
         void sort()
