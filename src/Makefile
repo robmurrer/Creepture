@@ -8,6 +8,7 @@ OBJ=$(SRC:%.cpp=%.o)
 default:
 	#make runvg
 	make run
+	make runtb
 	#make lldb
 	#make log
 
