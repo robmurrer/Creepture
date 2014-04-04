@@ -9,6 +9,18 @@
 #include "ga-util.h"
 #include "population.h"
 
+bool test_crossover()
+{
+    Chromosome chromo1(2);
+    Chromosome chromo2(2);
+    chromo1.init_rand();
+    //chromo1.print(stdout);
+    chromo1.crossover(0.5, chromo2);
+    //chromo1.print(stdout);
+
+    return true;
+}
+
 
 bool test_mutation()
 {
@@ -19,7 +31,7 @@ bool test_mutation()
     //chromo.print(stdout);
 
     return true;
-};
+}
 
 bool test_population_creation()
 {
@@ -345,6 +357,7 @@ bool (*tests[])() =
     test_mutate_range,
     test_population_creation,
     test_mutation,
+    test_crossover,
     NULL
 };
       

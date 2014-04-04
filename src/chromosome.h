@@ -229,6 +229,44 @@ class Chromosome
                             genes[i].v2_init, -1.0, 1.0, percent);
                 }
             }
+
+        };
+
+        void crossover(double prob, const Chromosome& partner)
+        {
+
+            for (int i=0; i<genes.size(); i++)
+            {
+                // crossover adjacency
+               for (int j=0; j<genes.size(); j++)
+               {
+                   if (prob_to_rand(prob))
+                   {
+                       genes[i].adjacency[j] = partner.genes[i].adjacency[j]; 
+                   }
+               }
+
+               // crossover neurons
+               if (prob_to_rand(prob))
+                {
+                    genes[i].u1_init = partner.genes[i].u1_init;
+                }
+
+               if (prob_to_rand(prob))
+                {
+                    genes[i].u2_init = partner.genes[i].u2_init;
+                }
+
+               if (prob_to_rand(prob))
+                {
+                    genes[i].v1_init = partner.genes[i].v1_init;
+                }
+
+               if (prob_to_rand(prob))
+                {
+                    genes[i].v2_init = partner.genes[i].v2_init;
+                }
+            }
         };
 
 };
