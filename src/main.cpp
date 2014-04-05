@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "test.h"
 
-#define VERSION             3
+#define VERSION             4
 #define CHROMO_SIZE         6 
-#define POP_SIZE            100
-#define MAX_GEN             150 
+#define POP_SIZE            10
+#define MAX_GEN             10 
 #define ELITES              0.2
 #define XOVER_RATE          0.7
 #define MUT_RATE            0.2
 #define MUT_RANGE           0.30
-//#define SEED                0
-#define SEED                time(0) 
+#define SEED                0
+//#define SEED                time(0) 
 
 int main()
 {

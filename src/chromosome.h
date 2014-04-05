@@ -5,7 +5,7 @@
 #include "cpg.h"
 #include "ga-util.h"
 
-#define MAX_TICK    2E3
+#define MAX_TICK    1E3
 
 int rand_adj()
 {
