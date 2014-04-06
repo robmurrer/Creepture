@@ -5,7 +5,8 @@
 #include "cpg.h"
 #include "ga-util.h"
 
-#define MAX_TICK    1E3
+#define MAX_TICK  2E3
+
 
 int rand_adj()
 {
@@ -157,7 +158,7 @@ class Chromosome
 
             sim.tick();
 
-            double initial_pos = sim.tail->GetPosition().x;
+            double initial_pos = sim.head->GetPosition().x;
 
             for (int i=0; i<MAX_TICK; i++)
             {
@@ -176,7 +177,7 @@ class Chromosome
             }
 
 
-            fitness = sim.tail->GetPosition().x - initial_pos;
+            fitness = sim.head->GetPosition().x - initial_pos;
 
             delete net;
 

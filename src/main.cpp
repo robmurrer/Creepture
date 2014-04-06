@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "test.h"
 
-#define VERSION             4
-#define CHROMO_SIZE         6 
-#define POP_SIZE            10
-#define MAX_GEN             10 
-#define ELITES              0.2
-#define XOVER_RATE          0.7
-#define MUT_RATE            0.2
-#define MUT_RANGE           0.30
-#define SEED                0
-//#define SEED                time(0) 
+#define VERSION             5
+#define CHROMO_SIZE         16 
+#define POP_SIZE            100
+#define MAX_GEN             150 
+#define ELITES              0.15
+#define XOVER_RATE          0.4
+#define MUT_RATE            0.05
+#define MUT_RANGE           0.03
+//#define SEED                0
+#define SEED                time(0) 
 
 int main()
 {
@@ -39,6 +39,8 @@ int main()
         pop.sort();
 
         fprintf(log, "%d\t%lf\t%lf\n", i+1, pop.list[0].fitness, pop.avgFitness);
+        fprintf(stdout, "%d\t%lf\t%lf\n", i+1, pop.list[0].fitness, pop.avgFitness);
+        fflush(stdout);
 
         // help out weaker members of population
         for (int j=0; j<num_elites; j++)
@@ -51,8 +53,6 @@ int main()
             pop.list[j].mutate(MUT_RANGE, MUT_RANGE);
         }
 
-        printf(".");
-        fflush(stdout);
     }
     
     fclose(log);

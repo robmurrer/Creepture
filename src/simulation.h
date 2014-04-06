@@ -20,6 +20,7 @@
 #define MOTOR_SPEED         720
 #define MOTOR_TORQUE        500.0f
 #define SEG_FRICTION        1.0f
+#define DENSITY             1.0f
 
 class Simulation
 {
@@ -105,7 +106,7 @@ class Simulation
             beam = world->CreateBody(&myBodyDef);
             boxShape.SetAsBox(beam_x_rad,beam_y_rad);
             myFixtureDef.shape = &boxShape;
-            myFixtureDef.density = 1;
+            myFixtureDef.density = DENSITY;
             beam->CreateFixture(&myFixtureDef);
 
             int rseg_x_pos = beam_x_pos + beam_x_rad + beam_joint_offset + seg_joint_offset;
