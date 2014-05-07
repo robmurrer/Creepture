@@ -1,12 +1,12 @@
-#ifndef CHROMOFROMFILE_H
-#define CHROMOFROMFILE_H
+#ifndef CHROMOFROMFILE2_H
+#define CHROMOFROMFILE2_H
 
 #include "../../../src/simulation.h"
 #include "../../../src/chromosome.h"
 #include "../../../src/cpg.h"
 
 
-class ChromoFromFile : public Test
+class ChromoFromFile2: public Test
 {
     public:
         Simulation *sim;
@@ -16,9 +16,9 @@ class ChromoFromFile : public Test
         double tick;
 
 
-        ChromoFromFile() 
+        ChromoFromFile2() 
         { 
-            char filename[] = "../../../log/chromosomes/chromosome.txt";
+            char filename[] = "../../../log/chromosomes/2-chromosome.txt";
             FILE *file = fopen(filename, "r");
             fscanf(file, "%d", &size);
             fclose(file);
@@ -81,7 +81,7 @@ class ChromoFromFile : public Test
 
         static Test* Create()
         {
-            return new ChromoFromFile;
+            return new ChromoFromFile2;
         }
 };
 

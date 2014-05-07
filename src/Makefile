@@ -8,18 +8,18 @@ OBJ=$(SRC:%.cpp=%.o)
 default:
 	#make runvg
 	make run
-	make genplots
-	make logcopy
+	cd ../log; make
+	#make genplots
+	#make logcopy
 	#make lldb
 	#make log
 
 genplots:
 	gnuplot -e "set term png; set out \"../log/gatmp/fitness.png\"; \
-	set xlabel \"Generation\"; set ylabel \"Distance\"; set grid; \
-	set title \"`cat ../log/gatmp/title.txt`\"; \
+	set xlabel \"Generation\"; set ylabel \"Fitness\"; set grid; \
 	plot \"../log/gatmp/generations.txt\" using 2 title 'Best Fitness' with lines, \
 	\"../log/gatmp/generations.txt\" using 3 title 'Avg Fitness' with lines"
-	#open ../log/gatmp/fitness.png
+	open ../log/gatmp/fitness.png
 	
 
 logcopy:

@@ -5,7 +5,8 @@
 #include "cpg.h"
 #include "ga-util.h"
 
-#define MAX_TICK  2E3
+// 60 * MAX_TICK = seconds until fitness calculation
+#define MAX_TICK 1900 
 
 
 int rand_adj()
@@ -51,6 +52,7 @@ class Chromosome
     public:
         std::vector<Gene> genes;
         double fitness = 0.0;
+        double distance = 0.0;
 
         Chromosome(int size)
         {
@@ -159,6 +161,9 @@ class Chromosome
             sim.tick();
 
             double initial_pos = sim.head->GetPosition().x;
+            double alpha = 1.0;
+            double beta = .01;
+            double energy = 0.0;
 
             for (int i=0; i<MAX_TICK; i++)
             {
@@ -170,14 +175,15 @@ class Chromosome
                 {
                     double cpg = net->nodes[j].voltage;
                     sim.joints[j]->SetMotorSpeed(cpg*MOTOR_SPEED);
+                    energy += fabs(cpg);
                 }
 
                 // advance sim
                 sim.tick();
             }
 
-
-            fitness = sim.head->GetPosition().x - initial_pos;
+            distance = sim.head->GetPosition().x - initial_pos;
+            fitness = alpha*distance - beta*energy/genes.size();
 
             delete net;
 

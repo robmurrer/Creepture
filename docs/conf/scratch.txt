@@ -1,0 +1,5 @@
+
+Robots in hostile and distant environments are prone to failure.  If the robot is modular or can reconfigure iteself after an equipment failure, it must then automatically reconfigure its locomotion patterns to the new context.  Because the search-space for possible locomotion patterns is so vast, Evolutionary Computation is used to optimize movement.  A Genetic Algorithm is used in conjunction with a simulation environment to calculate effectiveness of movement.  Through this method, locomotion patterns for a modular robot containing up to 5 modules was realized.
+
+Imagine a robot on a distant moon mining and collecting samples.  A large boulder tumbles down the landscape and crushes one of the robots tracks.  The robot is then no longer able to continue its mission.  This would be true if it was not a self-configurable  modular robot.  The robot sheds its damaged elements and assesses its current configuration.  Because the configuration of the damaged robot could not be known before the mission, it must automatically discover how to move again.
+

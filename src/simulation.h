@@ -11,7 +11,7 @@
 // World Settings
 #define GRAVITY             -9.8f
 #define GROUND_FRICTION     1.0f
-#define GROUND_SIZE         150.0f
+#define GROUND_SIZE         1500.0f
 #define STEP_SIZE           1.0f / 60.0f
 #define POS_ITERATIONS      3
 #define VEL_ITERATIONS      8
@@ -21,6 +21,7 @@
 #define MOTOR_TORQUE        500.0f
 #define SEG_FRICTION        1.0f
 #define DENSITY             1.0f
+#define MAX_ANGLE           90.0f 
 
 class Simulation
 {
@@ -147,8 +148,8 @@ class Simulation
             revoluteJointDef.localAnchorB.Set(-seg_joint_offset,0);
             revoluteJointDef.referenceAngle = 0;
             revoluteJointDef.enableLimit = true;
-            revoluteJointDef.lowerAngle = -90 * DEGTORAD;
-            revoluteJointDef.upperAngle = 90 * DEGTORAD;
+            revoluteJointDef.lowerAngle = -1 * MAX_ANGLE * DEGTORAD;
+            revoluteJointDef.upperAngle = MAX_ANGLE * DEGTORAD;
             revoluteJointDef.motorSpeed = 0;
             revoluteJointDef.maxMotorTorque = MOTOR_TORQUE;
             revoluteJointDef.enableMotor = true;
@@ -158,10 +159,6 @@ class Simulation
             revoluteJointDef.bodyB = lseg;
             revoluteJointDef.localAnchorA.Set(-beam_x_rad + beam_joint_offset, 0);
             revoluteJointDef.localAnchorB.Set(seg_joint_offset,0);
-            revoluteJointDef.referenceAngle = 0;
-            revoluteJointDef.enableLimit = true;
-            revoluteJointDef.lowerAngle = -90 * DEGTORAD;
-            revoluteJointDef.upperAngle = 90 * DEGTORAD;
             joints[i] = (b2RevoluteJoint*) world->CreateJoint(&revoluteJointDef);
 
             // fuse to last segment only if segment proceeds

@@ -9,6 +9,28 @@
 #include "ga-util.h"
 #include "population.h"
 
+bool test_chromosome_cpg_output()
+{
+    Chromosome chromo("../log/chromosomes/6-chromosome.txt");
+    CPGNet* net = chromo.toCPGNet(); 
+
+
+    FILE *log = fopen("../log/chromo-cpg-net.txt", "w");
+    for (int i=0; i<300; i++)
+    {
+        fprintf(log, "%d\t%lf\t%lf\t%lf\t%lf\t%lf\t%lf\n", i+1, 
+                net->nodes[0].voltage, net->nodes[1].voltage,
+                net->nodes[2].voltage, net->nodes[3].voltage,
+                net->nodes[4].voltage, net->nodes[5].voltage
+                );
+        net->tick();
+    }
+    fclose(log);
+
+    return true;
+}
+
+
 bool test_crossover()
 {
     Chromosome chromo1(2);
@@ -344,20 +366,21 @@ error:
 
 bool (*tests[])() = 
 { 
-    test_test,
-    test_box2d,
-    test_cpgnode,
-    test_cpgnet,
-    test_world,
-    test_cpg_sim,
-    test_chromosome,
-    test_probrand,
-    test_fitness,
-    test_chromo_write_to_disk,
-    test_mutate_range,
-    test_population_creation,
-    test_mutation,
-    test_crossover,
+    test_chromosome_cpg_output,
+    //test_test,
+    //test_box2d,
+    //test_cpgnode,
+    //test_cpgnet,
+    //test_world,
+    //test_cpg_sim,
+    //test_chromosome,
+    //test_probrand,
+    //test_fitness,
+    //test_chromo_write_to_disk,
+    //test_mutate_range,
+    //test_population_creation,
+    //test_mutation,
+    //test_crossover,
     NULL
 };
       
