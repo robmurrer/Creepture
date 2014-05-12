@@ -51,10 +51,13 @@ Creeptures up to 4 segments.
 *This is very rough and I am sure there are some dependencies and steps I have missed.  If you do try and fail to, feel free to message me on twitter [@robmurrer.com](https://twitter.com/robmurrer) and I will do my best to step you through the process.*
 
 ### Requirements
+
 * Linux or Mac OS X
 * [cmake](http://www.cmake.org/)
 * [XQuartz (Mac OS X only)](http://xquartz.macosforge.org/landing/)
 * [Gnuplot](http://www.gnuplot.info/)
+
+### Steps
 
 1. Download and unpack sources
 2. From a terminal program `cd` into the project directoy.
