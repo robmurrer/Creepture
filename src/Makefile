@@ -6,20 +6,17 @@ SRC=$(wildcard *.cpp)
 OBJ=$(SRC:%.cpp=%.o)
 
 default:
-	#make runvg
 	make run
-	cd ../log; make
-	#make genplots
-	#make logcopy
-	#make lldb
-	#make log
+	make genplots
+	make logcopy
+	make runtb
 
 genplots:
-	gnuplot -e "set term png; set out \"../log/gatmp/fitness.png\"; \
+	gnuplot -e "set term postscript color; set grid; set out \"../log/gatmp/fitness.eps\"; \
 	set xlabel \"Generation\"; set ylabel \"Fitness\"; set grid; \
 	plot \"../log/gatmp/generations.txt\" using 2 title 'Best Fitness' with lines, \
 	\"../log/gatmp/generations.txt\" using 3 title 'Avg Fitness' with lines"
-	open ../log/gatmp/fitness.png
+	open ../log/gatmp/fitness.eps
 	
 
 logcopy:

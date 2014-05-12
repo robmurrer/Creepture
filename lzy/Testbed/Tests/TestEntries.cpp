@@ -32,12 +32,12 @@
 //#include "plugged.h"
 //#include "cpgtest.h"
 #include "chromofromfile.h"
-#include "2seg.h"
-#include "4seg.h"
-#include "6seg.h"
-#include "8seg.h"
-#include "10seg.h"
-#include "12seg.h"
+//#include "2seg.h"
+//#include "4seg.h"
+//#include "6seg.h"
+//#include "8seg.h"
+//#include "10seg.h"
+//#include "12seg.h"
 
 TestEntry g_testEntries[] =
 {
@@ -48,11 +48,11 @@ TestEntry g_testEntries[] =
         //{"Plugged", Plugged::Create},   
         //{"CPGTest", CPGTest::Create},   
         {"ChromoFromFile", ChromoFromFile::Create},   
-        {"12 Segments", ChromoFromFile12::Create},   
-        {"10 Segments", ChromoFromFile10::Create},   
-        {"8 Segments", ChromoFromFile8::Create},   
-        {"6 Segments", ChromoFromFile6::Create},   
-        {"4 Segments", ChromoFromFile4::Create},   
-        {"2 Segments", ChromoFromFile2::Create},   
+        //{"12 Segments", ChromoFromFile12::Create},   
+        //{"10 Segments", ChromoFromFile10::Create},   
+        //{"8 Segments", ChromoFromFile8::Create},   
+        //{"6 Segments", ChromoFromFile6::Create},   
+        //{"4 Segments", ChromoFromFile4::Create},   
+        //{"2 Segments", ChromoFromFile2::Create},   
         {NULL, NULL}
 };

@@ -18,7 +18,7 @@ class ChromoFromFile : public Test
 
         ChromoFromFile() 
         { 
-            char filename[] = "../../../log/chromosomes/chromosome.txt";
+            char filename[] = "../../../log/chromosomes/test.txt";
             FILE *file = fopen(filename, "r");
             fscanf(file, "%d", &size);
             fclose(file);
