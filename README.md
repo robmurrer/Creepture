@@ -3,7 +3,7 @@ Creepture
 
 Virtual Caterpillar-like Robot that Achieves Locomotion Automatically through Evolutionary Computation
 
-![5 Segment Creepture in Action [chain]](docs/conf/images/chain.png)
+![animation](docs/images/8segment-fullga-500gen.gif?raw=true)
 
 A conference style paper describing this system can be found in  [PDF](https://github.com/robmurrer/Creepture/blob/master/docs/conf/report.pdf?raw=true) format.
 
@@ -53,7 +53,7 @@ Creeptures up to 4 segments.
 ### Requirements
 * Linux or Mac OS X
 * [cmake](http://www.cmake.org/)
-* [XQuartz](http://xquartz.macosforge.org/landing/) (Mac OS X only)
+* [XQuartz (Mac OS X only)](http://xquartz.macosforge.org/landing/)
 * [Gnuplot](http://www.gnuplot.info/)
 
 1. Download and unpack sources
