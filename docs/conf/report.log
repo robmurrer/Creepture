@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.7)  7 MAY 2014 16:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.7)  12 MAY 2014 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -304,12 +304,12 @@ Underfull \hbox (badness 10000) detected at line 105
  []
 
 
-Underfull \hbox (badness 10000) detected at line 119
+Underfull \hbox (badness 10000) detected at line 118
  []$[]  [] []$ []  
  []
 
 
-Underfull \hbox (badness 10000) detected at line 126
+Underfull \hbox (badness 10000) detected at line 125
  []$[]  [] []$ []  
  []
 
@@ -317,21 +317,25 @@ Underfull \hbox (badness 10000) detected at line 126
 File: images/segment-annotated.png Graphic file (type png)
 
 <use images/segment-annotated.png>
-Package pdftex.def Info: images/segment-annotated.png used on input line 171.
+Package pdftex.def Info: images/segment-annotated.png used on input line 170.
 (pdftex.def)             Requested size: 252.0pt x 113.02432pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 171--173
+Overfull \hbox (12.0pt too wide) in paragraph at lines 170--172
  [][] 
  []
 
-[2 <./images/segment-annotated.png>]
-<images/chain.png, id=27, 528.97626pt x 163.61125pt>
+
+Underfull \vbox (badness 1314) has occurred while \output is active []
+
+ [2 <./images/segment-annotated.png>] <images/chain.png, id=27, 528.97626pt x 1
+63.61125pt>
 File: images/chain.png Graphic file (type png)
- <use images/chain.png>
-Package pdftex.def Info: images/chain.png used on input line 267.
+
+<use images/chain.png>
+Package pdftex.def Info: images/chain.png used on input line 262.
 (pdftex.def)             Requested size: 252.0pt x 77.94333pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 267--268
+Overfull \hbox (12.0pt too wide) in paragraph at lines 262--263
  [][] 
  []
 
@@ -343,7 +347,7 @@ Here is how much of TeX's memory you used:
  5992 multiletter control sequences out of 15000+600000
  51933 words of font info for 69 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 41i,20n,28p,590b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,20n,28p,611b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013bas
 ic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2013basic/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2013basic/texm
@@ -360,7 +364,7 @@ r/local/texlive/2013basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
 local/texlive/2013basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/lo
 cal/texlive/2013basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2013basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (3 pages, 495436 bytes).
+Output written on report.pdf (3 pages, 495605 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

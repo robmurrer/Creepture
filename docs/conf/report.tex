@@ -32,7 +32,7 @@ Creeptures with up to 4 modules.
 Locomotion is an essential behavior of most organisms. How the
 locomotive patterns are acquired for efficient movement can be thought
 of intuitively as a trial-and-error feedback loop. A child learning to
-crawl will attempt many times and fail before she is able to move in a
+crawl will attempt many times and fail before they are able to move in a
 desired manner. Because this process can be thought of as an
 optimization, Evolutionary Computation (EC) and specifically Genetic
 Algorithms (GAs) have been used to create automatic locomotion {[}1{]}
@@ -105,8 +105,7 @@ equations (1) and (2) are used to model a CPG network.
 \end{multline}
 
 The subscripts of 1 and 2 represent the extensor and flexor neuron pairs within the CPG, and the num
-represents the number of joints present in the network. Descriptions of
-the various other parameters can be found in {[}2{]}. The variables
+represents the number of joints present in the network.  The variables
 $s_1$ and $s_2$ are the weighted connections to the rest of the network
 and are defined in equations (3) and (4). The variable $s$ is normalized
 between -1.0 and 1.0 via the sigmoid function.
@@ -174,8 +173,8 @@ Joint Angle: $\pm$ 90.0$\deg$ \label{creepturemod}}
 \end{figure}
 
 The number of modules of the Creepture can be varied before the start of
-a GA run. Each module is fused together with the previous module and a
-chain is created (Figure 3).
+a GA run. Each module is fused together with the previous module
+creating a chain (Figure 3).
 
 \subsection{Genetic Algorithm}\label{genetic-algorithm}
 
@@ -204,19 +203,16 @@ At each generation the members of the population went through a
 simulation within the physics engine. This was done by approximating
 each CPGs state through equations (1) and (2) using the \emph{Euler}
 method. The output of each CPG was then connected through equation (5)
-to a joint motor within the simulation. At each tick or step in the
-simulation this was done. A total time of 20 seconds was simulated for
-each member of the population.
+to a joint motor within the simulation; this was done at each tick or step in the
+simulation. Each member of the population was simulated for 20 seconds.
 
 \begin{equation}
     \text{fitness} = \text{distance} - \gamma \frac{\text{energy}}{\text{num}}
 \end{equation}
 
-The fitness of an individual is then calculated based on performance in
-the simulation. Distance traveled in the correct direction is
-responsible for most of the individuals fitness score. The energy
-expended in the simulation is then divided by the number of modules and
-this is multiplied by a constant of 0.01. This is then subtracted from
+The fitness of an individual is then calculated using (6) where distance in the "correct" direction is assessed.
+The energy expended in the simulation is then divided by the number of modules and
+multiplied by constant $\gamma$ of value 0.01. This is then subtracted from
 the distance in order to encourage efficient locomotion.
 
 \subsubsection{Selection and Mutation}
@@ -236,9 +232,8 @@ bounds of -1.0 to 1.0.
 
 \subsection{Procedure for testing}
 
-To determine the effectiveness of the Creepture system and to discover
-the upper limit on the number of modules that can be used, this
-procedure was used.
+To evaluate the effectiveness of the Creepture system and to determine
+the upper limit on the number of modules, the following procedure was used.
 
 \begin{enumerate}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -260,7 +255,7 @@ procedure was used.
 Locomotion was realized for all Creeptures containing up to 5 segments.
 As the segment count was increased the distance of movement after 40s
 declined. By limiting the number of segments a Creepture had a more
-stable locomotion pattern as time increases.
+stable locomotion pattern over time. 
 
 \begin{figure}
 \centering
@@ -291,9 +286,9 @@ be a culprit of the decline in distance after 20s.
 In order to keep runtime down on the GA, fitness calculations are
 limited to a 20s execution time in the simulation. Even though this is
 not a real-time value, increasing this value by 2x will effectively
-double the run time of the GA.  A multi-threaded approach may need to be employed to generate sufficient locomotion patterns for Creeptures of over 4 segments.
+double the run time of the GA.  A multi-threaded approach may need to be employed to generate sufficient locomotion patterns for Creeptures having greater than 4 segments.
 
-The success of locomotion for extended period time is still unsolved by these experiments.  More study must be done to create long-term stable locomotion patterns.  The fact that the Creepture has no feed back mechanism for when each segment is on or off the ground seems to be a problem for long-term locomotion.  The CPG network generates a successful pattern at first but the pace at which the Creepture is moving causes a premature stalling of the movement.  This has been witnessed in [2] and these feedback mechanisms may be integrated into the CPGs of future Creeptures.
+The success of locomotion for extended periods remains unsolved by these experiments and requires more study to create long-term stable locomotion patterns.  Given the Creepture has no feed back mechanism indicating when a segment is on or off the ground appears to be a problem for long-term locomotion and offers an area for future study.  The CPG network initially generates a successful pattern at first but the pace of the Creepture causes a premature stalling of the movement.  This has been witnessed in [2] and these feedback mechanisms may be integrated into the CPGs of future Creeptures.
 
 
 
