@@ -1,6 +1,6 @@
 puzzle
 *.o
-*.pdf
+/**.pdf*/
 .DS_Store
 log/
 test.txt
