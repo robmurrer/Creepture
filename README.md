@@ -7,8 +7,8 @@ Virtual Caterpillar-like Robot that Achieves Locomotion Automatically through Ev
 
 A conference style paper describing this system can be found in  [PDF](https://github.com/robmurrer/Creepture/blob/master/docs/conf/report.pdf?raw=true) format.
 
-### Excerpts from Paper
-#### Abstract
+## Excerpts from Paper
+### Abstract
 
 This paper presents an Evolutionary Computation approach to
 automatically realize locomotion with a modular virtual caterpillar-like
@@ -19,7 +19,7 @@ in the Creepture. This was accomplished through a simulation layer in
 the fitness function of the GA. Successful locomotion in a desired
 direction was realized for Creeptures with up to 4 modules.
 
-#### Introduction
+### Introduction
 
 Locomotion is an essential behavior of most organisms. How the
 locomotive patterns are acquired for efficient movement can be thought
@@ -51,6 +51,7 @@ Creeptures up to 4 segments.
 *This is very rough and I am sure there are some dependencies and steps I have missed.  If you do try and fail to, feel free to message me on twitter [@robmurrer.com](https://twitter.com/robmurrer) and I will do my best to step you through the process.*
 
 ### Requirements
+* Linux or Mac OS X
 * [cmake](http://www.cmake.org/)
 * [XQuartz](http://xquartz.macosforge.org/landing/) (Mac OS X only)
 * [Gnuplot](http://www.gnuplot.info/)
