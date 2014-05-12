@@ -48,7 +48,7 @@ Creeptures up to 4 segments.
 
 ## Installing and Running
 
-*This is very rough and I am sure there are some dependencies and steps I have missed.  If you do try and fail to, feel free to message me on twitter [@robmurrer.com](https://twitter.com/robmurrer) and I will do my best to step you through the process.*
+*This is very rough and I am sure there are some dependencies and steps I have missed.  If you do try and fail, feel free to message me on twitter [@robmurrer](https://twitter.com/robmurrer) or raise an issue here and I will do my best to step you through the process.*
 
 ### Requirements
 
