@@ -1,8 +1,6 @@
 puzzle
 *.o
-/**.pdf*/
 .DS_Store
-log/
 test.txt
 *.a
 lzy/Build/
