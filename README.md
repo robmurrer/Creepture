@@ -60,9 +60,10 @@ Creeptures up to 4 segments.
 ### Steps
 
 1. Download and unpack sources
-2. From a terminal program `cd` into the project directoy's `src`.
-4. If desired, edit main.cpp to modify the parameters of the system.
-3. Run the `make` command.
+2. From a terminal program `cd` into the project directoy.
+4. If desired, edit `src/main.cpp` to modify the parameters of the system.
+3. Run the `make box2d` command.
+3. If the previous step was successful run the `make` command.
 4. The GA will then run. With default settings it will take about 30 minutes.
 5. When GA is complete a graph and testbed will be launched (on OS X)
 
