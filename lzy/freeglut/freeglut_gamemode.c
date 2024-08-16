@@ -27,6 +27,7 @@
 
 #include "freeglut.h"
 #include "freeglut_internal.h"
+#include <unistd.h>
 
 /*
  * TODO BEFORE THE STABLE RELEASE:

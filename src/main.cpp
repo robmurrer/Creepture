@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "test.h"
 
-#define VERSION             8
-#define CHROMO_SIZE         8 
-#define POP_SIZE            100
-#define MAX_GEN             150
-#define ELITES              0.3
+#define VERSION             801
+#define CHROMO_SIZE         2 
+#define POP_SIZE            100 
+#define MAX_GEN             15
+#define ELITES              0.7
 #define XOVER_RATE          0.7
 #define MUT_RATE            0.05
 #define MUT_RANGE           0.01

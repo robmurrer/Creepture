@@ -175,6 +175,7 @@ class Chromosome
                 {
                     double cpg = net->nodes[j].voltage;
                     sim.joints[j]->SetMotorSpeed(cpg*MOTOR_SPEED);
+                    
                     energy += fabs(cpg);
                 }
 
